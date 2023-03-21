@@ -1,20 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
+import { stylesApp } from './stylesapp';
+import Form from './Form';
+import Card from './Card';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Proyecto Formulario Empleado</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView>
+      <View style={stylesApp.container}>
+        <Form></Form>
+        <Card></Card>
+      </View>
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
