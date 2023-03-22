@@ -28,5 +28,23 @@ export const stylesForm = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center'
-    }
+    },
+    inputDateContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    inputDate: {
+        borderWidth: 1,
+        padding: 10,
+        width: width * 0.25,
+        textAlign: 'center',
+        borderRadius: 6,
+        fontSize: 15,
+        marginBottom: 10
+    },
+    diagonal: {
+        textAlign: 'center',
+        fontSize: 20,
+        paddingTop: 8
+    },
 });

@@ -16,6 +16,7 @@ export const stylesCard = StyleSheet.create({
         height: 100,
         width: 100,
         marginTop: -30,
+        borderRadius: 50,
     },
     description: {
         fontWeight: 'bold',

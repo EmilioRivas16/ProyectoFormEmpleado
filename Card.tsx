@@ -18,6 +18,9 @@ export default function Card() {
         <Text style={stylesCard.descriptionContainer}>
             <Text style={stylesCard.description}>Teléfono:</Text> {employeeData.phone}
         </Text>
+        <Text style={stylesCard.descriptionContainer}>
+            <Text style={stylesCard.description}>Birthday:</Text> {employeeData.day} / {employeeData.month} / {employeeData.year}
+        </Text>
     </View>
     );
 }

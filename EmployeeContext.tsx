@@ -4,6 +4,9 @@ export interface EmployeeData {
     name: string;
     email: string;
     phone: string;
+    day: string;
+    month: string;
+    year: string;
 }
 
 interface EmployeeContextType {
@@ -12,6 +15,6 @@ interface EmployeeContextType {
 }
 
 export const EmployeeContext = React.createContext<EmployeeContextType>({
-    employeeData: { name: '', email: '', phone: '' },
+    employeeData: { name:'',email:'',phone:'',day:'',month:'',year:'' },
     setEmployeeData: () => {},
 });

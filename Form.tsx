@@ -33,6 +33,35 @@ export default function Form() {
         }
       />
 
+      <View style={stylesForm.inputDateContainer}>
+        <TextInput 
+          placeholder="Día" 
+          style={stylesForm.inputDate} 
+          keyboardType="phone-pad"
+          onChangeText={(text) =>
+            setEmployeeData({ ...employeeData, day: text })
+          }
+        />
+        <Text style={stylesForm.diagonal}>/</Text>
+        <TextInput 
+          placeholder="Mes" 
+          style={stylesForm.inputDate} 
+          keyboardType="phone-pad"
+          onChangeText={(text) =>
+            setEmployeeData({ ...employeeData, month: text })
+          }
+        />
+        <Text style={stylesForm.diagonal}>/</Text>
+        <TextInput 
+          placeholder="Año" 
+          style={stylesForm.inputDate} 
+          keyboardType="phone-pad"
+          onChangeText={(text) =>
+            setEmployeeData({ ...employeeData, year: text })
+          }
+        />
+      </View>
+
       <View style={stylesForm.buttonsContainer}>
         <TouchableOpacity style={stylesForm.button}>
           <Text style={stylesForm.textButton}>Bloquear tarjeta</Text>
