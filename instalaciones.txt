@@ -1,0 +1,2 @@
+npm install react-native-dropdown-select-list
+npx expo install expo-image-picker

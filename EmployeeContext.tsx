@@ -3,10 +3,12 @@ import React from 'react';
 export interface EmployeeData {
     name: string;
     email: string;
+    puesto: string;
     phone: string;
     day: string;
     month: string;
     year: string;
+    image: string;
 }
 
 interface EmployeeContextType {
@@ -15,6 +17,6 @@ interface EmployeeContextType {
 }
 
 export const EmployeeContext = React.createContext<EmployeeContextType>({
-    employeeData: { name:'',email:'',phone:'',day:'',month:'',year:'' },
+    employeeData: { name:'',email:'',puesto:'',phone:'',day:'',month:'',year:'',image:'' },
     setEmployeeData: () => {},
 });

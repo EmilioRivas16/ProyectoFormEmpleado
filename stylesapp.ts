@@ -6,6 +6,6 @@ export const stylesApp = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 55
+    marginTop: 55,
   },
 });

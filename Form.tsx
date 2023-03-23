@@ -1,11 +1,42 @@
-import React, { useContext } from 'react';
-import { View, TextInput, TouchableOpacity, Text } from 'react-native';
+import React, { useContext, useState, useEffect } from 'react';
+import { View, TextInput, TouchableOpacity, Text, Button, Image } from 'react-native';
 import { stylesForm } from './stylesform';
 import { EmployeeContext } from './EmployeeContext';
+import { SelectList } from 'react-native-dropdown-select-list'
+import * as ImagePicker from 'expo-image-picker';
 
 export default function Form() {
   const { employeeData, setEmployeeData } = useContext(EmployeeContext);
+  const [selected, setSelected] = useState("");
 
+  const data = [
+    {key:'1', value:'Gerente'},
+    {key:'2', value:'Desarrollador Jr'},
+    {key:'3', value:'Desarrollador Sr'},
+    {key:'4', value:'Soporte'},
+    {key:'5', value:'Líder de proyecto'}
+  ]
+
+  useEffect(() => {
+    setEmployeeData({ ...employeeData, puesto: selected });
+  }, [selected]);
+
+  const [image, setImage] = useState('');
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setEmployeeData({ ...employeeData, image: result.assets[0].uri });
+    }
+};
+
+  
   return (
     <View>
       <TextInput
@@ -24,6 +55,17 @@ export default function Form() {
           setEmployeeData({ ...employeeData, email: text })
         }
       />
+
+      <SelectList
+        placeholder="Seleccione el puesto"
+        boxStyles={{marginBottom: 10}}
+        setSelected={(val: any) => 
+          setSelected(val)
+        } 
+        data={data} 
+        save="value"
+      />
+
       <TextInput
         style={stylesForm.input}
         placeholder="Número telefónico"
@@ -62,15 +104,11 @@ export default function Form() {
         />
       </View>
 
-      <View style={stylesForm.buttonsContainer}>
-        <TouchableOpacity style={stylesForm.button}>
-          <Text style={stylesForm.textButton}>Bloquear tarjeta</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={stylesForm.button}>
-          <Text style={stylesForm.textButton}>Desbloquear tarjeta</Text>
-        </TouchableOpacity>
+      <View style={{  alignItems: 'center', justifyContent: 'center' }}>
+        <Button title="Pick an image from camera roll" onPress={pickImage} />
+        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
       </View>
+
     </View>
   );
 }

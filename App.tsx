@@ -10,10 +10,12 @@ export default function App() {
   const initialEmployeeData: EmployeeData = {
     name: '',
     email: '',
+    puesto: '',
     phone: '',
     day:'',
     month:'',
-    year:''
+    year:'', 
+    image:''
   };
   const { employeeData, setEmployeeData } = useEmployeeData(initialEmployeeData);
   
