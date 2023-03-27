@@ -10,7 +10,7 @@ export const stylesForm = StyleSheet.create({
         textAlign: 'center',
         borderRadius: 6,
         fontSize: 15,
-        marginBottom: 10
+        marginBottom: 30
     },
     buttonsContainer: {
         flexDirection: 'row',
@@ -40,11 +40,15 @@ export const stylesForm = StyleSheet.create({
         textAlign: 'center',
         borderRadius: 6,
         fontSize: 15,
-        marginBottom: 10
+        marginBottom: 30
     },
     diagonal: {
         textAlign: 'center',
         fontSize: 20,
         paddingTop: 8
     },
+    disabledButton: {
+        backgroundColor: 'grey',
+        pointerEvents: 'none'
+    }
 });

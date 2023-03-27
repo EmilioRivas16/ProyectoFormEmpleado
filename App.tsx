@@ -15,7 +15,8 @@ export default function App() {
     day:'',
     month:'',
     year:'', 
-    image:''
+    image:'',
+    isCardLocked: false
   };
   const { employeeData, setEmployeeData } = useEmployeeData(initialEmployeeData);
   

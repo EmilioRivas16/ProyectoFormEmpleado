@@ -9,6 +9,7 @@ export interface EmployeeData {
     month: string;
     year: string;
     image: string;
+    isCardLocked: boolean;
 }
 
 interface EmployeeContextType {
@@ -17,6 +18,6 @@ interface EmployeeContextType {
 }
 
 export const EmployeeContext = React.createContext<EmployeeContextType>({
-    employeeData: { name:'',email:'',puesto:'',phone:'',day:'',month:'',year:'',image:'' },
+    employeeData: { name:'',email:'',puesto:'',phone:'',day:'',month:'',year:'',image:'', isCardLocked: false},
     setEmployeeData: () => {},
 });

@@ -1,5 +1,5 @@
 {
-  "name": "proyectoformularioempleado",
+  "name": "proyectoformempleado",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -9,10 +9,10 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~48.0.6",
+    "expo": "~48.0.9",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
-    "react-native": "0.71.3",
+    "react-native": "0.71.4",
     "react-native-dropdown-select-list": "^2.0.4",
     "expo-image-picker": "~14.1.1"
   },
